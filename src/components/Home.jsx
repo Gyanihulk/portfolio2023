@@ -53,7 +53,7 @@ const Home = ({ ratio }) => {
 
           <Typewriter
             options={{
-              strings: ["A Developer", "A Project Manager", "A Content Creater","A Athlete"],
+              strings: ["A Developer", "A Project Manager", "A Content Creator","An Athlete"],
               autoStart: true,
               loop: true,
               cursor: "",
@@ -61,7 +61,7 @@ const Home = ({ ratio }) => {
             }}
           />
           <div>
-            <a href=" ">Hire Me</a>
+            <a href="https://wa.me/7017368626?text=">Hire Me</a>
             <a href="#work">
               Projects <BsArrowUpRight />
             </a>

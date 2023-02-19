@@ -1,1 +1,1 @@
-My portfolio build in React 
+Adamya Kumars portfolio build in React 

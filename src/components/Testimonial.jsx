@@ -2,6 +2,7 @@ import React from "react";
 import aditi from "../assets/aditi.jpg";
 import saumay from "../assets/saumay.jpg";
 import mahak from "../assets/mahak.jpg";
+import {FaLinkedin} from 'react-icons/fa'
 const Testimonial = () => {
   return (
     <div id="testimonial">
@@ -39,6 +40,9 @@ const TestimonialCard = ({ name, feedback ,linkedin, img}) => (
       alt="User"
     />
     <h4>{name}</h4>
+   <a href={linkedin}>
+    <FaLinkedin/> 
+    Linkedin</a>
     <p>{feedback}</p>
     
   </article>
