@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Header = ({ setMenuOpen, menuOpen }) => {
   return (
@@ -25,24 +26,27 @@ export const HeaderPhone = ({ menuOpen, setMenuOpen }) => {
 
 const NavContent = ({ setMenuOpen }) => (
   <>
-    <h2>Gyani Hulk ...</h2>
+    <Link to={'/'}><h2>... Gyani Hulk ...</h2></Link>
     <div>
-      <a onClick={() => setMenuOpen(false)} href="#home">
+    <a onClick={() => setMenuOpen(false)} href="/#home">
         Home
       </a>
-      <a onClick={() => setMenuOpen(false)} href="#work">
+      <a onClick={() => setMenuOpen(false)} href="/#work">
         Work
       </a>
-      <a onClick={() => setMenuOpen(false)} href="#timeline">
+      <a onClick={() => setMenuOpen(false)} href="/#timeline">
         Experience
       </a>
-      <a onClick={() => setMenuOpen(false)} href="#services">
+      <a onClick={() => setMenuOpen(false)} href="/#certificates">
+        Certificates
+      </a>
+      <a onClick={() => setMenuOpen(false)} href="/#services">
         Services
       </a>
-      <a onClick={() => setMenuOpen(false)} href="#testimonial">
+      <a onClick={() => setMenuOpen(false)} href="/#testimonial">
         Testimonial
       </a>
-      <a onClick={() => setMenuOpen(false)} href="#contact">
+      <a onClick={() => setMenuOpen(false)} href="/#contact">
         Contact
       </a>
     </div>

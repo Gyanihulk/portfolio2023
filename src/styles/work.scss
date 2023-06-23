@@ -52,7 +52,12 @@
           line-height: 180%;
           margin: 2rem;
         }
-        > a {
+        .links-container {
+          display: flex;
+        }
+        
+        .links-container a {
+          margin-right: 10px; /* Add some spacing between the links */
           background-color: $color3;
           padding: 0.7rem 2rem;
           margin: 2rem;
@@ -62,6 +67,7 @@
             background-color: $color3_1;
           }
         }
+        
       }
     }
   }

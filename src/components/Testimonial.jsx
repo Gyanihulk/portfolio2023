@@ -6,7 +6,7 @@ import {FaLinkedin} from 'react-icons/fa'
 const Testimonial = () => {
   return (
     <div id="testimonial">
-      <h2>Testimonial</h2>
+      <h2>Star Students</h2>
       <section>
         <TestimonialCard
           name={"Mahak Arora"}

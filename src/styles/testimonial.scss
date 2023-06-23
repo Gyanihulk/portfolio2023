@@ -14,9 +14,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
     margin: auto;
-    height: 40rem;
+    height: 50rem;
     padding: 8rem;
     background-color: $color1;
     gap: 20px;
@@ -40,11 +40,13 @@
         border-radius: 50%;
         transform: translateY(-50%);
       }
-
+      h4 {
+        padding-top: 2rem;
+      }
       p {
-        letter-spacing: 2px;
+        letter-spacing: 1px;
         margin: 20px 0;
-        font-size: 0.6rem;
+        font-size: 1rem;
         line-height: 160%;
         text-align: center;
         overflow: hidden;

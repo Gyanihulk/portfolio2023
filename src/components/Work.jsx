@@ -2,7 +2,7 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { projects } from "../assets/projects";
-
+import { Link } from "react-router-dom";
 
 const Work = () => {
   return (
@@ -25,9 +25,23 @@ const Work = () => {
                 <aside>
                   <h3>{i.title}</h3>
                   <p>{i.description}</p>
-                  <a target={"blank"} href={i.url}>
-                    View Demo
-                  </a>
+                  <div className="links-container">
+                  {i.id == "booking" ||
+                    i.id == "fitness" ||
+                    i.id == "foodDelivery" ? (
+                      <Link to={"project/" + i.id}>Details</Link>
+                    ) : null}
+                    
+                    {i.id == "booking" ||
+                    i.id == "fitness" ||
+                    i.id == "foodDelivery" ||i.id=='news'  ? (
+                      <a target="_blank" href={i.url}>
+                      View Demo
+                    </a>
+                    ) : null}
+                    
+                  
+                  </div>
                 </aside>
               </div>
             ))}
