@@ -56,17 +56,27 @@
           display: flex;
         }
         
-        .links-container a {
+        .links-container .button {
           margin-right: 10px; /* Add some spacing between the links */
           background-color: $color3;
           padding: 0.7rem 2rem;
           margin: 2rem;
           color: $color4;
           transition: all 0.5s;
+        
           &:hover {
             background-color: $color3_1;
           }
         }
+        
+        @media (max-width: 768px) {
+          /* Apply different styles for screens with a maximum width of 768px */
+          .links-container .button {
+            padding: 0.5rem 1.5rem;
+            margin: 1rem;
+          }
+        }
+        
         
       }
     }

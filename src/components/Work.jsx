@@ -29,15 +29,14 @@ const Work = () => {
                   {i.id == "booking" ||
                     i.id == "fitness" ||
                     i.id == "foodDelivery" ? (
-                      <Link to={"project/" + i.id}>Details</Link>
+                      <Link className="button" to={"project/" + i.id}>Details</Link>
                     ) : null}
                     
                     {i.id == "booking" ||
                     i.id == "fitness" ||
                     i.id == "foodDelivery" ||i.id=='news'  ? (
-                      <a target="_blank" href={i.url}>
-                      View Demo
-                    </a>
+                    
+                     <Link className="button" to={i.url}>Demo</Link>
                     ) : null}
                     
                   
