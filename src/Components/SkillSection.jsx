@@ -32,7 +32,7 @@ const skills = [
       level: 80,
     },
     {
-      title: "Python",
+      title: "Php",
       level: 65,
     },
   ];

@@ -3,6 +3,7 @@ import AboutSection from './AboutSection'
 import SkillSection from './SkillSection'
 import Section from './Section'
 import ContactSection from './ContactSection'
+import ProjectsSection from './ProjectsSection'
 
 
 
@@ -11,9 +12,7 @@ const Interface = () => {
     <>
     <AboutSection/>
     <SkillSection/>
-    <Section>
-        <h1>Projects</h1>
-    </Section>
+ <ProjectsSection/>
     <ContactSection/>
     </>
   )

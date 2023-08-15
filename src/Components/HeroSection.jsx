@@ -18,6 +18,9 @@ import { Desktop } from "./Desktop";
 import { motion } from "framer-motion-3d";
 import { animate, useMotionValue } from "framer-motion";
 import { framerMotionConfig } from "../config";
+import { Ground } from "./Ground";
+import { Fence } from "./Fence";
+import { Projects } from "./Projects";
 
 const HeroSection = (props) => {
   const { section ,menuOpened  } = props;
@@ -56,17 +59,43 @@ const HeroSection = (props) => {
           position={[0, -1.5, -10]}
           transition={ {type: "spring",
           damping: 10,
-          stiffness: 100}}
-          animate={{
-            z: section === 1 ? 0 : -1.6,
-            y: section === 1 ? -viewport.height : -0.9,
-            x: section === 1 ? 0 : -1,
-            scale: section === 0 ? 1 : 2,
-          }}
+          stiffness: 100, duration: 0.6,}}
+         
+        animate={"" + section}
+        variants={{
+          0: {
+            y: -0.9 ,
+            x: -1,
+            z: -1.6,
+          },
+          1: {
+            y: -viewport.height ,
+            x: 2.2,
+            z: -6.3,
+            scale:1.5
+          },
+          2: {
+            x: 1,
+            y: -viewport.height * 2 + 0.5,
+            z: 4,
+            rotateX: 0,
+            rotateY: Math.PI / 2,
+            rotateZ: 0,
+          },
+          3: {
+            y: -viewport.height * 3 - 12,
+            x: -4,
+            rotateX: 0,
+            rotateY: Math.PI / 4,
+            rotateZ: 0,
+            scale:8
+          },
+        }}
         >
           <Avatar
-            animation={section === 0 ? "Typing" : "Standing"}
-            rotation-y={Math.PI * 0.5}
+            animation={section === 0 ? "Typing" : section === 1?"Parkour":   section === 2 ? "Standing" :
+            "Dance"}
+            rotation-y={section===0?Math.PI * 0.5:Math.PI * -0.05}
           />
         </motion.group>
         {/* {animation==="Typing" &&(
@@ -85,7 +114,10 @@ const HeroSection = (props) => {
           <meshStandardMaterial color="white" />
         </mesh>
         <Room section={section} position-y={-1} position-x={2} />
+        {section===1?<Ground position-y={-11} position-x={1} scale={5} />:""}
+        {section===1?<Fence position-y={-11} position-x={1} scale={0.9} />:""}
       </group>
+      <Projects/>
     </>
   );
 };

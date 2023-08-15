@@ -14,7 +14,16 @@ const AboutSection = () => {
       
       <Typewriter
             options={{
-              strings: ["A Software Engineer", "A Project Manager", "A Content Creator","An Athlete"],
+              strings: ["A Software Engineer", "A Content Creator"],
+              autoStart: true,
+              loop: true,
+              cursor: "",
+              wrapperClassName: "text-lg text-white mt-12 ",
+            }}
+          />
+          <Typewriter
+            options={{
+              strings: ["A Project Manager","An Athlete"],
               autoStart: true,
               loop: true,
               cursor: "",

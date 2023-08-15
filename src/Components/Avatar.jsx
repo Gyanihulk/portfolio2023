@@ -23,16 +23,26 @@ export function Avatar(props) {
   const { animations: standingAnimation } = useFBX("animations/Standing.fbx");
   const { animations: backflipAnimation } = useFBX("animations/Backflip.fbx");
   const { animations: fallingAnimation } = useFBX("animations/Falling.fbx");
+  const { animations: parkourAnimation } = useFBX("animations/Parkour.fbx");
+  const { animations: danceAnimation } = useFBX("animations/Dance.fbx");
+
+
   typingAnimation[0].name = "Typing";
   standingAnimation[0].name = "Standing";
   backflipAnimation[0].name = "Backflip";
   fallingAnimation[0].name = "Falling";
+  parkourAnimation[3].name="Parkour";
+  danceAnimation[0].name = "Dance";
+  console.log(parkourAnimation);
+  console.log(fallingAnimation)
   const { actions } = useAnimations(
     [
       typingAnimation[0],
       backflipAnimation[0],
       fallingAnimation[0],
       standingAnimation[0],
+      parkourAnimation[3],
+      danceAnimation[0]
     ],
     group
   );
