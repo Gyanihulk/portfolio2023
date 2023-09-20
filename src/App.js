@@ -9,13 +9,20 @@ import { Leva } from "leva";
 import { MotionConfig } from "framer-motion";
 import { framerMotionConfig } from "./config";
 import { ScrollManager } from "./Components/ScrollManager";
+import { useProgress } from '@react-three/drei'
+import Loader from "./Components/Loader";
+
 function App() {
   const [section, setSection] = useState(0);
   const [menuOpened, setMenuOpened] = useState(false);
   useEffect(() => {
     setMenuOpened(false);
   }, [section]);
-  return (
+  const { progress } = useProgress()
+  if (progress < 100) {
+    return <Loader/>
+  }else{
+ return (
     <>
      <MotionConfig
         transition={{
@@ -47,6 +54,8 @@ function App() {
           </MotionConfig>
     </>
   );
+  }
+ 
 }
 
 export default App;
