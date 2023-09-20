@@ -19,6 +19,7 @@ function App() {
     setMenuOpened(false);
   }, [section]);
   const { progress } = useProgress()
+  console.log(progress);
   if (progress < 100) {
     return <Loader/>
   }else{

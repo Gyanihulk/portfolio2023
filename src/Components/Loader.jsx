@@ -16,8 +16,14 @@ const Loader = () => {
             height: 150px;
             width: 150px;
           }
+          h1{
+            color:white;
+          }
         `}
       </style>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+
+      <h1 style={{ marginBottom: '100px' }} >Website has many 3d assets </h1>
       <svg viewBox="0 0 100 100">
         <g
           fill="none"
@@ -25,7 +31,7 @@ const Loader = () => {
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="6"
-        >
+          >
           <path d="M 21 40 V 59">
             <animateTransform
               attributeName="transform"
@@ -34,7 +40,7 @@ const Loader = () => {
               values="0 21 59; 180 21 59"
               dur="2s"
               repeatCount="indefinite"
-            />
+              />
           </path>
 
           <path d="M 79 40 V 59">
@@ -45,7 +51,7 @@ const Loader = () => {
               values="0 79 59; -180 79 59"
               dur="2s"
               repeatCount="indefinite"
-            />
+              />
           </path>
 
           <path d="M 50 21 V 40">
@@ -54,7 +60,7 @@ const Loader = () => {
               values="M 50 21 V 40; M 50 59 V 40"
               dur="2s"
               repeatCount="indefinite"
-            />
+              />
           </path>
 
           <path d="M 50 60 V 79">
@@ -63,7 +69,7 @@ const Loader = () => {
               values="M 50 60 V 79; M 50 98 V 79"
               dur="2s"
               repeatCount="indefinite"
-            />
+              />
           </path>
 
           <path d="M 50 21 L 79 40 L 50 60 L 21 40 Z">
@@ -72,7 +78,7 @@ const Loader = () => {
               values="rgba(255,255,255,1); rgba(100,100,100,0)"
               dur="2s"
               repeatCount="indefinite"
-            />
+              />
           </path>
 
           <path d="M 50 40 L 79 59 L 50 79 L 21 59 Z" />
@@ -83,7 +89,7 @@ const Loader = () => {
               values="rgba(100,100,100,0); rgba(255,255,255,1)"
               dur="2s"
               repeatCount="indefinite"
-            />
+              />
           </path>
           <animateTransform
             attributeName="transform"
@@ -92,10 +98,12 @@ const Loader = () => {
             values="0 0; 0 -19"
             dur="2s"
             repeatCount="indefinite"
-          />
+            />
         </g>
       </svg>
+      <h1 style={{ marginTop: '100px' }}>So hold tight</h1>
     </div>
+            </div>
   );
 };
 
