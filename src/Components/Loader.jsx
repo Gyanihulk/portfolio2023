@@ -1,29 +1,15 @@
+import { Html, useProgress } from '@react-three/drei';
 import React from 'react';
 
 const Loader = () => {
+    const { active, progress, errors, item, loaded, total } = useProgress();
   return (
-    <div>
-      <style>
-        {`
-          body {
-            background: #000;
-          }
-          svg {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            height: 150px;
-            width: 150px;
-          }
-          h1{
-            color:white;
-          }
-        `}
-      </style>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+<Html center>
+    
+       
+   
 
-      <h1 style={{ marginBottom: '100px' }} >Website has many 3d assets </h1>
+      Website has many 3d assets
       <svg viewBox="0 0 100 100">
         <g
           fill="none"
@@ -101,9 +87,9 @@ const Loader = () => {
             />
         </g>
       </svg>
-      <h1 style={{ marginTop: '100px' }}>So hold tight</h1>
-    </div>
-            </div>
+      So hold tight  {progress} % loaded
+  
+              </Html>
   );
 };
 

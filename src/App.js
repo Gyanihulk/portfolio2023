@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber";
-import { Scroll, ScrollControls } from "@react-three/drei";
+import { OrbitControls, Scroll, ScrollControls,Html,
+  useProgress } from "@react-three/drei";
 import HeroSection from "./Components/HeroSection";
 import Interface from "./Components/Interface";
 import './index.css'
@@ -9,8 +10,14 @@ import { Leva } from "leva";
 import { MotionConfig } from "framer-motion";
 import { framerMotionConfig } from "./config";
 import { ScrollManager } from "./Components/ScrollManager";
-import { useProgress } from '@react-three/drei'
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { Suspense } from "react";
+import { useLoader } from "@react-three/fiber";
 import Loader from "./Components/Loader";
+// function Loader() {
+//   const { active, progress, errors, item, loaded, total } = useProgress();
+//   return <Html center>{progress} % loaded</Html>;
+// }
 
 function App() {
   const [section, setSection] = useState(0);
@@ -19,11 +26,8 @@ function App() {
     setMenuOpened(false);
   }, [section]);
   const { progress } = useProgress()
-  console.log(progress);
-  if (progress < 100) {
-    return <Loader/>
-  }else{
- return (
+  console.log(progress)
+  return (
     <>
      <MotionConfig
         transition={{
@@ -33,18 +37,20 @@ function App() {
 
       <Canvas shadows camera={{position:[3,3,3]}}>
       <color attach="background" args={["#ececec"]} />
-    
+      <Suspense fallback={<Loader />}>
+
         <ScrollControls pages={4} damping={0.1}>
        <ScrollManager section={section} onSectionChange={setSection} />
-        <Scroll>
-
-        <HeroSection section={section} menuOpened={menuOpened} />
+        
+ <Scroll><HeroSection section={section} menuOpened={menuOpened} />
         </Scroll>
+
+       
         <Scroll html>
           <Interface/>
         </Scroll>
         </ScrollControls>
-        
+        </Suspense>
       </Canvas>
       <Menu
           onSectionChange={setSection}
@@ -55,8 +61,6 @@ function App() {
           </MotionConfig>
     </>
   );
-  }
- 
 }
 
 export default App;

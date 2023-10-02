@@ -51,7 +51,7 @@ const HeroSection = (props) => {
   });
   return (
     <>
-      {/* <OrbitControls /> */}
+      
       <directionalLight position={[0, 3, 1]} intensity={0.1} />
       <Background />
       <group position-y={-1}>
