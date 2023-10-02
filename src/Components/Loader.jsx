@@ -3,6 +3,7 @@ import React from 'react';
 
 const Loader = () => {
     const { active, progress, errors, item, loaded, total } = useProgress();
+    console.log(active, progress, errors, item, loaded, total)
   return (
 <Html center>
     
@@ -87,7 +88,7 @@ const Loader = () => {
             />
         </g>
       </svg>
-      So hold tight  {progress} % loaded
+      So hold tight  {progress} % loadedyarn 
   
               </Html>
   );

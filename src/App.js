@@ -1,9 +1,14 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Scroll, ScrollControls,Html,
-  useProgress } from "@react-three/drei";
+import {
+  OrbitControls,
+  Scroll,
+  ScrollControls,
+  Html,
+  useProgress,
+} from "@react-three/drei";
 import HeroSection from "./Components/HeroSection";
 import Interface from "./Components/Interface";
-import './index.css'
+import "./index.css";
 import { Menu } from "./Components/Menu";
 import { useEffect, useState } from "react";
 import { Leva } from "leva";
@@ -25,40 +30,36 @@ function App() {
   useEffect(() => {
     setMenuOpened(false);
   }, [section]);
-  const { progress } = useProgress()
-  console.log(progress)
   return (
     <>
-     <MotionConfig
+      <MotionConfig
         transition={{
           ...framerMotionConfig,
         }}
       >
+        <Canvas shadows camera={{ position: [3, 3, 3] }}>
+          <color attach="background" args={["#ececec"]} />
+          <Suspense fallback={<Loader />}>
+            <ScrollControls pages={4} damping={0.1}>
+              <ScrollManager section={section} onSectionChange={setSection} />
 
-      <Canvas shadows camera={{position:[3,3,3]}}>
-      <color attach="background" args={["#ececec"]} />
-      <Suspense fallback={<Loader />}>
+              <Scroll>
+                <HeroSection section={section} menuOpened={menuOpened} />
+              </Scroll>
 
-        <ScrollControls pages={4} damping={0.1}>
-       <ScrollManager section={section} onSectionChange={setSection} />
-        
- <Scroll><HeroSection section={section} menuOpened={menuOpened} />
-        </Scroll>
-
-       
-        <Scroll html>
-          <Interface/>
-        </Scroll>
-        </ScrollControls>
-        </Suspense>
-      </Canvas>
-      <Menu
+              <Scroll html>
+                <Interface />
+              </Scroll>
+            </ScrollControls>
+          </Suspense>
+        </Canvas>
+        <Menu
           onSectionChange={setSection}
           menuOpened={menuOpened}
           setMenuOpened={setMenuOpened}
-          />
-          <Leva hidden />
-          </MotionConfig>
+        />
+        <Leva hidden />
+      </MotionConfig>
     </>
   );
 }
