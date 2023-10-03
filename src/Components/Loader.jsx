@@ -1,15 +1,11 @@
-import { Html, useProgress } from '@react-three/drei';
-import React from 'react';
+import { Html, useProgress } from "@react-three/drei";
+import React from "react";
 
 const Loader = () => {
-    const { active, progress, errors, item, loaded, total } = useProgress();
-    console.log(active, progress, errors, item, loaded, total)
+  const { active, progress, errors, item, loaded, total } = useProgress();
+  console.log(active, progress, errors, item, loaded, total);
   return (
-<Html center>
-    
-       
-   
-
+    <Html center>
       Website has many 3d assets
       <svg viewBox="0 0 100 100">
         <g
@@ -18,7 +14,7 @@ const Loader = () => {
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="6"
-          >
+        >
           <path d="M 21 40 V 59">
             <animateTransform
               attributeName="transform"
@@ -27,7 +23,7 @@ const Loader = () => {
               values="0 21 59; 180 21 59"
               dur="2s"
               repeatCount="indefinite"
-              />
+            />
           </path>
 
           <path d="M 79 40 V 59">
@@ -38,7 +34,7 @@ const Loader = () => {
               values="0 79 59; -180 79 59"
               dur="2s"
               repeatCount="indefinite"
-              />
+            />
           </path>
 
           <path d="M 50 21 V 40">
@@ -47,7 +43,7 @@ const Loader = () => {
               values="M 50 21 V 40; M 50 59 V 40"
               dur="2s"
               repeatCount="indefinite"
-              />
+            />
           </path>
 
           <path d="M 50 60 V 79">
@@ -56,7 +52,7 @@ const Loader = () => {
               values="M 50 60 V 79; M 50 98 V 79"
               dur="2s"
               repeatCount="indefinite"
-              />
+            />
           </path>
 
           <path d="M 50 21 L 79 40 L 50 60 L 21 40 Z">
@@ -65,7 +61,7 @@ const Loader = () => {
               values="rgba(255,255,255,1); rgba(100,100,100,0)"
               dur="2s"
               repeatCount="indefinite"
-              />
+            />
           </path>
 
           <path d="M 50 40 L 79 59 L 50 79 L 21 59 Z" />
@@ -76,7 +72,7 @@ const Loader = () => {
               values="rgba(100,100,100,0); rgba(255,255,255,1)"
               dur="2s"
               repeatCount="indefinite"
-              />
+            />
           </path>
           <animateTransform
             attributeName="transform"
@@ -85,12 +81,11 @@ const Loader = () => {
             values="0 0; 0 -19"
             dur="2s"
             repeatCount="indefinite"
-            />
+          />
         </g>
       </svg>
-      So hold tight  {progress} % loadedyarn 
-  
-              </Html>
+      So hold tight {progress === 0 ? "99.9" : progress.toFixed(1)} % loaded
+    </Html>
   );
 };
 

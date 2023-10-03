@@ -19,10 +19,6 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Suspense } from "react";
 import { useLoader } from "@react-three/fiber";
 import Loader from "./Components/Loader";
-// function Loader() {
-//   const { active, progress, errors, item, loaded, total } = useProgress();
-//   return <Html center>{progress} % loaded</Html>;
-// }
 
 function App() {
   const [section, setSection] = useState(0);
